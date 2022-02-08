@@ -1,0 +1,10 @@
+
+---
+- name: Harden
+  hosts: all
+ 
+  roles:
+    - role: devsec.hardening.os_hardening
+      when: ansible_system == "Linux"
+    - role: devsec.hardening.ssh_hardening
+      when: ansible_system == "Linux"
